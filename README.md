@@ -1,7 +1,7 @@
 # blog-website-project
 
 ### After Click on the blew link click the blog icon to go to the blog page
-### Live demo <span>https://obscure-refuge-95214.herokuapp.com</span>
+### Live demo <span>https://infinite-hollows-50552.herokuapp.com</span>
 
 #### Features
 
