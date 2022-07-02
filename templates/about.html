@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid mt-3">
+
+    <div class="card shadow p-1 mb-5 bg-body rounded">
+        <img style="width: 100%;height: 30vw; object-fit: cover;" src="{% static 'img/about.svg' %}" class="card-img-top" alt="...">
+        <div class="card-body">
+           
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid p-3 mt-4 mb-3 text-center">
+        <span style="font-family: 'Mochiy Pop P One', sans-serif; font-size: 40px;">About</span>
+
+    </div>
+
+    <div class="container mb-5">
+
+        <div class="p-3 mb-5">
+            <div class="card-body">
+                <h3 class="card-title" style="margin-bottom: 0rem;"><span style="font-family: 'Mochiy Pop P One', sans-serif; text-align: center; font-size: 20px ;">A blog is a discussion or informational website published on the World Wide Web consisting of discrete, often informal diary-style text entries. Posts are typically displayed in reverse chronological order, so that the most recent post appears first, at the top of the web page
+                </span></h3>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}

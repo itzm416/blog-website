@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block title %} Category {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid mt-3">
+
+<div class="card shadow p-1 mb-5 bg-body rounded">
+    <img style="width: 100%;height: 30vw; object-fit: cover;" src="/media/{{category.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h3 class="card-title"><span style="font-family: 'Archivo Black', sans-serif; color: rgb(27, 112, 84);">{{category.title}}</span></h3>
+        <p class="card-text"> <span
+            style="font-family: 'Archivo Black', sans-serif;">Description</span> -
+        {{category.description|truncatewords:15}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<h2 class="mb-5 mt-5 shadow p-3 bg-body rounded" style="font-family: 'Mochiy Pop P One', sans-serif; text-align: center;">Blogs...</h2>
+</div>
+
+<div class="container mb-5">
+
+{% for p in posts %}
+
+<div class="card shadow p-3 mb-5 bg-body rounded">
+    <div class="card-body">
+        <h3 class="card-title" style="margin-bottom: 0rem;"><span style="font-family: 'Archivo Black', sans-serif; color: rgb(27, 112, 84);">{{p.title}}</span></h3>
+        <div class="container" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;margin: 12px auto; margin-top: 0px; padding: 0rem;">
+            <p style="margin-bottom: 0rem;">{{p.content | safe}}</p> 
+        </div>      
+      <p class="card-text"><small class="text-muted">{{p.add_date}}</small></p>
+      <a href="{% url 'post' p.slug %}" class="btn btn-sm btn-outline-secondary">Read More..</a>
+    </div>
+  </div>
+
+  {% empty %}
+
+        <h3 class="text-center">No posts in this category</h3>
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}

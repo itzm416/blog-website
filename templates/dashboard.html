@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+
+<div class="container mt-4 p-3 mb-3">
+    <div class="alert alert-dark" role="alert">
+        <h2 class="mb-4 mt-4" style="font-family: 'Mochiy Pop P One', sans-serif; text-align: center;">Your Blogs...</h2>
+      </div>
+
+   
+</div>
+
+ <div class="container"><a href="{% url 'addpost' %}" class="btn btn-success mb-4">Add Post</a></div>
+<div class="container"><a href="{% url 'change-password' %}" class="btn btn-primary mb-4">Change Password</a></div>
+
+<div class="container mb-5">
+    
+    {% for p in post %}
+    
+    <div class="card shadow p-3 mb-5 bg-body rounded">
+    <div class="card-body">
+        <h3 class="card-title" style="margin-bottom: 0rem;"><span style="font-family: 'Archivo Black', sans-serif; color: rgb(27, 112, 84);">{{p.title}}</span></h3>
+        <div class="container" style="overflow: hidden;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;margin: 12px auto; margin-top: 0px; padding: 0rem;">
+            <p style="margin-bottom: 0rem;">{{p.content | safe}}</p> 
+        </div>      
+      <p class="card-text"><small class="text-muted">{{p.add_date}}</small></p>
+      <a href="{% url 'updatepost' p.post_id %}" class="btn btn-sm btn-outline-primary">Edit</a>
+      <a href="{% url 'deletepost' p.post_id %}" class="btn btn-sm btn-outline-danger">Delete</a>
+      <a href="{% url 'post' p.slug %}" class="btn btn-sm btn-outline-secondary">Read More..</a>
+    </div>
+  </div>
+
+  {% empty %}
+
+      <div class="container text-center" style="margin-top: 250px;">
+          <h3 style="font-family: 'Mochiy Pop P One', sans-serif; text-align: center;">No posts available</h3>
+      </div>
+
+  {% endfor %}
+
+</div>
+
+
+{% endblock %}
