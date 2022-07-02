@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['itzmyblog.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['infinite-hollows-50552.herokuapp.com','localhost']
 
 
 # Application definition
